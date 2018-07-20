@@ -9,14 +9,21 @@ $(document).ready(function() {
 
 	$('.store-btn').click(function(event){
 		event.preventDefault();
-		localStorage.setItem('hrext', "three is the best");
+		let titleVal = $('.input-field-title').val();
+		let contentVal = $('.input-field-body').val();
+		localStorage.setItem('title', titleVal);
+		localStorage.setItem('content', contentVal);
 	});
 	$('.get-btn').click(function(event){
 		event.preventDefault();
-		console.log(localStorage.getItem('hrext'));
+		let storedTitle = localStorage.getItem('title');
+		let storedContent = localStorage.getItem('content');
+		$('.debug').html(`<p>${storedTitle} ${storedContent}</p>`);
 	});
 	$('.delete-btn').click(function(event){
 		event.preventDefault();
-		localStorage.removeItem('hrext');
+		localStorage.removeItem('title');
+		localStorage.removeItem('content');
+
 	});
 });
