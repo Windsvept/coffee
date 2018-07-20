@@ -3,3 +3,46 @@ layout
 form styles - borders, colors, shapes
 
 */
+.comtainer {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.input-display {
+	flex-grow: 1;
+}
+
+button {
+  	padding: 5px
+  	background: transparent;
+  	border: 0;
+  	padding: 0;
+  	cursor: pointer;
+  	outline: 0;
+  	-webkit-appearance: none;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: dodgerblue;
+}
+
+button:hover {
+	background-color: lightblue;
+}
+
+button:after {
+	background-color: yellow;
+}
+
+.input-field-title {
+	height: 60px;
+	font-size: 20px;
+}
+
+.input-field-body {
+	height: 60px;
+	font-size: 20px;
+}
+
