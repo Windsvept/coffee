@@ -18,12 +18,20 @@ $(document).ready(function() {
 		event.preventDefault();
 		let storedTitle = localStorage.getItem('title');
 		let storedContent = localStorage.getItem('content');
-		$('.debug').html(`<p>${storedTitle} ${storedContent}</p>`);
+		if(storedContent === null && storedTitle === null){
+			$('.debug').html(`<p>Nothing to get!</p>`);
+		}else{
+			$('.debug').html(`<p>${storedTitle} ${storedContent}</p>`);
+		}
 	});
 	$('.delete-btn').click(function(event){
 		event.preventDefault();
-		localStorage.removeItem('title');
-		localStorage.removeItem('content');
-
+		if(localStorage.getItem('title') !== null && localStorage.getItem('content') !== null){
+			$('.debug').html(`<p>Deleted Items</p>`);
+			localStorage.removeItem('title');
+			localStorage.removeItem('content');
+		}else{
+			$('.debug').html(`<p>Nothing to delete!</p>`);
+		}
 	});
 });
