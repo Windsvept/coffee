@@ -7,7 +7,16 @@ $(document).ready(function() {
 
 	// });
 
-	$().click(function(){
-		
+	$('.store-btn').click(function(event){
+		event.preventDefault();
+		localStorage.setItem('hrext', "three is the best");
+	});
+	$('.get-btn').click(function(event){
+		event.preventDefault();
+		console.log(localStorage.getItem('hrext'));
+	});
+	$('.delete-btn').click(function(event){
+		event.preventDefault();
+		localStorage.removeItem('hrext');
 	});
 });
